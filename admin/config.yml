@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "src/articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "select", options: ["Transactional Analysis", "ACEs", "Trauma", "Relationships", "Parenting", "Workplace Mental Health", "Resilience", "Self-Esteem"] }
+      - { label: "Read Time", name: "readTime", widget: "string", default: "4 min read" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+      - { label: "Permalink", name: "permalink", widget: "string", required: false, hint: "Example: /articles/my-article-title/" }
+      - { label: "Body", name: "body", widget: "markdown" }

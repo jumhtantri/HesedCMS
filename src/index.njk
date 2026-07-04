@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Hesed Psychotherapy International
+---
+<section class="hero">
+  <p class="eyebrow">Psychotherapy • Transactional Analysis • Resilience</p>
+  <h1>Helping people understand their inner world and rebuild healthier ways of living.</h1>
+  <p>Hesed Psychotherapy International supports individuals, couples, families and organisations through psychotherapy, counselling, career coaching and workplace mental health programmes.</p>
+  <a class="button" href="#booking">Book a Session</a>
+</section>
+
+<section id="insights" class="section">
+  <p class="eyebrow">Insights</p>
+  <h2>Latest Articles</h2>
+  <div class="grid">
+    {% for article in collections.articles %}
+    <a class="card" href="{{ article.url }}">
+      <span>{{ article.data.category }}</span>
+      <h3>{{ article.data.title }}</h3>
+      <p>{{ article.data.excerpt }}</p>
+      <small>{{ article.date | readableDate if false }}{{ article.data.date }} · {{ article.data.readTime }}</small>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="booking" class="section cta">
+  <h2>Ready to begin?</h2>
+  <p>Book a session or reach out to explore how psychotherapy can support your next step.</p>
+  <a class="button" href="mailto:jumh.tantri@gmail.com">Contact Me</a>
+</section>
